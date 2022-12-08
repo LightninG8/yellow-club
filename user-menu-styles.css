@@ -1,0 +1,484 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+
+@font-face {      
+  font-family: 'Bebas Neue';   
+  src: local('Bebas Neue'), url('/fileservice/file/download/h/8c0a85bbbc61f965269b1002e2c7efd0.otf/a/177899/sc/233') format('opentype'),          
+  url('/fileservice/file/download/h/370b772da35fda638361c22f8343cc5a.woff/a/177899/sc/138') format('woff'); 
+  } 
+  
+  #user-menu ~ .gc-main-content.with-left-menu {    
+    margin-left: 300px;
+    width: calc(100% - 300px);
+    position: relative;
+    height:100%;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  #user-menu ~ .gc-main-content.with-left-menu .gc-into-main-content,
+  .standard-page-content .resp-screen .resp-header {
+    left: 300px;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  
+  /* Custom CSS */
+  
+  #user-menu {
+    /* 
+      c - color
+      i - icon
+      tr - transition
+     */
+  
+    --c-bg: #0C0C0C;
+    --c-menu-item-hover: #F2CE88;
+    --c-menu-item-selected: #F2CE88;
+    --c-line: rgba(255, 255, 255, 0.5);
+    --c-default-font: #FFFFFF;
+    --c-contrast-font: #F2CE88;
+    
+    --tr-rollup-menu: 0.4s;
+    --tr-default: 0.2s;
+    
+    --i-profile: url("https://raw.githubusercontent.com/LightninG8/my-files/main/profile.svg");
+    --i-notification-button-small: url("https://raw.githubusercontent.com/LightninG8/my-files/main/notifications_button_small.svg");
+    --i-cms: url("https://raw.githubusercontent.com/LightninG8/my-files/main/cms.svg");
+    --i-teach: url("https://raw.githubusercontent.com/LightninG8/my-files/main/teach.svg");
+    --i-user: url("https://raw.githubusercontent.com/LightninG8/my-files/main/user.svg");
+    --i-tasks: url("https://raw.githubusercontent.com/LightninG8/my-files/main/tasks.svg");
+    --i-notifications: url("https://raw.githubusercontent.com/LightninG8/my-files/main/notifications.svg");
+    --i-sales: url("https://raw.githubusercontent.com/LightninG8/my-files/main/sales.svg");
+    --i-chatium: url("https://raw.githubusercontent.com/LightninG8/my-files/main/chatium.svg");
+    --i-close: url("https://raw.githubusercontent.com/LightninG8/my-files/main/close.svg");
+  }
+  
+  #user-menu * {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+  }
+  
+  #user-menu.umenu-body {
+    position: fixed;
+    top: 0;
+    left: 0;
+  
+    font-family: 'Bebas Neue', sans-serif;
+  
+    width: 300px;
+    max-width: 100%;
+    height: 100%;
+    height: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: auto auto;
+    grid-template-rows: auto auto;
+    
+        
+    overflow: hidden;
+    background: var(--c-bg);
+    -webkit-transition: var(--tr-rollup-menu);
+    -o-transition: var(--tr-rollup-menu);
+    transition: var(--tr-rollup-menu);
+  }
+  
+  #user-menu .umenu-menu {
+    list-style: none;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  #user-menu .umenu-menu::-webkit-scrollbar {
+      width: 0px; 
+  }
+  
+  #user-menu .menu-item {
+    cursor: pointer;
+    -webkit-transition: var(--tr-default);
+    -o-transition: var(--tr-default);
+    transition: var(--tr-default);
+  }
+  
+  /* user info */
+  #user-menu .user-body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto 30px 1fr;
+    grid-template-columns: auto 1fr;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    grid-gap: 25px;
+    padding: 20px 15px 10px 25px;
+    -webkit-transition: var(--tr-rollup-menu);
+    -o-transition: var(--tr-rollup-menu);
+    transition: var(--tr-rollup-menu);
+  }
+  #user-menu .user-avatar {
+    width: 60px;
+    height: 60px;
+  
+    background-size: 100% 100%;
+    background-position: center center;
+    border-radius: 50%;
+  
+  }
+  
+  #user-menu .user-name { 
+  
+   
+    font-family: 'Bebas Neue', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+  
+    color: var(--c-contrast-font);
+  
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+  
+  #user-menu .user-email {
+    margin-top: 5px;
+    font-family: 'Cera Pro', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 13px;
+    color: var(--c-default-font);
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+  }
+  
+  /* End User Info */
+  
+  
+  /* Menu item */
+  #user-menu .menu-item:not(.user) {
+    position: relative;
+    padding-bottom: 0;
+  }
+  
+  #user-menu .menu-item:not(.user):after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 84%;
+    height: 1px;
+    
+    background: var(--c-line);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    -webkit-transition: var(--tr-rollup-menu);
+    -o-transition: var(--tr-rollup-menu);
+    transition: var(--tr-rollup-menu);
+  }
+  
+  
+  #user-menu .item-header:not(.user-body) {
+    position: relative;
+   
+    padding: 20px 25px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto 30px 1fr;
+    grid-template-columns: auto 1fr;
+    grid-gap: 25px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: var(--tr-rollup-menu);
+    -o-transition: var(--tr-rollup-menu);
+    transition: var(--tr-rollup-menu);
+  }
+  
+  #user-menu .item-header:not(.user-body):hover {
+    background: var(--c-menu-item-hover);
+  }
+  
+  #user-menu .item-icon {
+    width: 20px;
+    height: 20px;
+    
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #user-menu .item-title {
+    
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+  line-height: 21px;
+    color: var(--c-default-font);
+    
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+  }
+  
+  #user-menu .item-cross {
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    
+    width: 8px;
+    height: 8px;
+    
+    -webkit-transform: translateY(-50%);
+    
+        -ms-transform: translateY(-50%);
+    
+            transform: translateY(-50%);
+  }
+  
+  #user-menu .item-cross:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    
+    display: block;
+    width: 100%;
+    height: 2px;
+    
+    background: var(--c-default-font);
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    -webkit-transition: var(--tr-default);
+    -o-transition: var(--tr-default);
+    transition: var(--tr-default);
+  }
+  
+  #user-menu .item-cross:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    
+    display: block;
+    width: 100%;
+    height: 2px;
+    
+    background: var(--c-default-font);
+    -webkit-transform: translateY(-50%) rotate(90deg);
+        -ms-transform: translateY(-50%) rotate(90deg);
+            transform: translateY(-50%) rotate(90deg);
+    -webkit-transition: var(--tr-default);
+    -o-transition: var(--tr-default);
+    transition: var(--tr-default);
+  }
+  
+  #user-menu .accordeon-header.selected .item-cross:before,
+  #user-menu .accordeon-header.selected .item-cross:after {
+    -webkit-transform: translateY(-50%) rotate(180deg);
+        -ms-transform: translateY(-50%) rotate(180deg);
+            transform: translateY(-50%) rotate(180deg);
+  }
+  
+  
+  
+  
+  #user-menu .item-submenu {
+    padding-left: 70px;
+  
+    list-style: none;
+  }
+  
+  #user-menu .submenu-link {
+    position: relative;
+   
+    display: inline-block;
+    padding: 5px 0;
+  
+    color: var(--c-default-font);
+    font-family: 'Cera Pro', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    text-decoration: none;
+  }
+  
+  #user-menu .submenu-link:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    
+    width: 0;
+    height: 1px;
+    background: var(--c-default-font);
+    
+    -webkit-transition: var(--tr-default);
+    
+    -o-transition: var(--tr-default);
+    
+    transition: var(--tr-default);
+  }
+  #user-menu .submenu-link:hover:after {
+    width: 100%;
+  }
+  
+  
+  
+  #user-menu .menu-item-profile .item-icon {
+    background-image: var(--i-profile);
+  }
+  #user-menu .menu-item-notifications_button_small .item-icon {
+    background-image: var(--i-notification-button-small);
+  }
+  #user-menu .menu-item-cms .item-icon {
+    background-image: var(--i-cms);
+  }
+  #user-menu .menu-item-teach .item-icon {
+    background-image: var(--i-teach);
+  }
+  #user-menu .menu-item-user .item-icon {
+    background-image: var(--i-user);
+  }
+  #user-menu .menu-item-tasks .item-icon {
+    background-image: var(--i-tasks);
+  }
+  #user-menu .menu-item-notifications .item-icon {
+    background-image: var(--i-notifications);
+  }
+  #user-menu .menu-item-sales .item-icon {
+    background-image: var(--i-sales);
+  }
+  #user-menu .menu-item-chatium .item-icon {
+    background-image: var(--i-chatium);
+  }
+  
+  
+  /* End Menu item */
+  
+  
+  /* Rollup button */
+  #user-menu .umenu-rollup-btn {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto 20px 1fr;
+    -ms-grid-row-align: start;
+        align-self: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-grid-columns: auto 20px 1fr;
+    grid-template-columns: auto 1fr;
+    grid-gap: 20px;
+    margin: 20px 35px;
+    
+    cursor: pointer;
+    -webkit-transition: var(--tr-default);
+    -o-transition: var(--tr-default);
+    transition: var(--tr-default);
+  }
+  #user-menu .rollup-icon {
+    width: 20px;
+    height: 20px;
+    
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: var(--i-close);
+    -webkit-transform: scaleX(-1);
+        -ms-transform: scaleX(-1);
+            transform: scaleX(-1);
+    -webkit-transition: var(--tr-rollup-menu);
+    -o-transition: var(--tr-rollup-menu);
+    transition: var(--tr-rollup-menu);
+  }
+  
+  #user-menu .rollup-title {
+    color: var(--c-contrast-font);
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+  }
+  /* End Rollup button */
+  
+  
+  /* Accordeon */
+  #user-menu .accordeon-list {
+    max-height: 0;
+    
+    overflow: hidden;
+    -webkit-transition: var(--tr-rollup-menu);
+    -o-transition: var(--tr-rollup-menu);
+    transition: var(--tr-rollup-menu);
+  }
+  
+  #user-menu .accordeon-header {
+    -webkit-transition: var(--tr-default);
+    -o-transition: var(--tr-default);
+    transition: var(--tr-default);
+  }
+  
+  #user-menu .accordeon-header.selected + .item-submenu {
+    padding-bottom: 15px;
+    padding-top: 10px;
+  }
+  #user-menu .accordeon-header.selected {
+    background: var(--c-menu-item-hover);
+  }
+  /* End Accordeon */
+  
+  /* Rollup menu */
+  
+  #user-menu.umenu-body.rollup {
+    width: 90px;
+  }
+  
+  #user-menu.umenu-body.rollup .item-cross {
+    opacity: 0;
+  }
+  #user-menu.umenu-body.rollup .menu-item:not(.user):after {
+    width: 100%;
+  }
+  #user-menu.umenu-body.rollup .rollup-icon {
+    -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  
+  #user-menu.umenu-body.rollup .item-header {
+    padding-left: 35px;
+  }
+  
+  #user-menu.umenu-body.rollup .user-body {
+    padding-left: 15px;
+  }
+  
+  
+  #user-menu.rollup ~ .gc-main-content.with-left-menu {    
+    margin-left: 90px;
+    width: calc(100% - 90px);
+  }
+  
+  #user-menu.rollup ~ .gc-main-content.with-left-menu .gc-into-main-content,
+  .standard-page-content .resp-screen .resp-header {
+    left: 90px;
+  }
+  
+  /* End Rollup menu */
