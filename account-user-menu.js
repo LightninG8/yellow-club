@@ -14,6 +14,8 @@ $(()=>{setTimeout(()=>{
       return
     }
 
+    console.log(userdata);
+
     // Контейнер меню
     $('#gcAccountUserMenu').after(`
       <div class="leftbar" id="leftbar">
@@ -54,7 +56,7 @@ $(()=>{setTimeout(()=>{
 
       const arrow = el.subitems.length > 1 ? '<div class="item__arrow"> <svg class="strelka-bottom-3" height="14" viewBox="0 0 5 9"><path d="M0.419,9.000 L0.003,8.606 L4.164,4.500 L0.003,0.394 L0.419,0.000 L4.997,4.500 L0.419,9.000 Z" fill="#6F767E"></div>': '';
 
-      let submenu = '<div class="submenu submenu__body"></div>';
+      let submenu = '';
 
       if (el.subitems.length > 1) {
         const subitems = [];
@@ -78,8 +80,8 @@ $(()=>{setTimeout(()=>{
       if (el.id == 'profile') {
         $('#leftbar .gc-account-user-menu').append(`
           <li class="menu__item menu__item_${el.id} item ${isActive ? 'active' : ''}">
-            <a href="${link}" class="item__profile item__header accordeon profile">
-              <div class="profile__avatar" style="background-image: url(${userdata.data.logo.image})"></div>
+            <a href="${link}" class="item__profile item__header ${submenu && 'accordeon'} profile">
+              <div class="profile__avatar" style="background-image: url(${el.iconUrl})"></div>
               <div class="profile__info">
                 <div class="profile__name">${userdata.data.title}</div>
                 <div class="profile__email">${userdata.data.blocks[1]?.title}</div>
@@ -96,7 +98,7 @@ $(()=>{setTimeout(()=>{
 
       $('#leftbar .gc-account-user-menu').append(`
         <li class="menu__item menu__item_${el.id} item ${isActive ? 'active' : ''}">
-          <a href="${link}" class="item__header accordeon">
+          <a href="${link}" class="item__header ${submenu && 'accordeon'} ">
             <div class="item__icon">
               ${iconsList[el.id]}
             </div>
@@ -111,7 +113,7 @@ $(()=>{setTimeout(()=>{
     })
 
     // Открытие субменю
-    $('.menu__item:not(.menu__item_notifications_button_small) .accordeon').on('click', toggleSubmenu);
+    $('.menu__item .accordeon').on('click', toggleSubmenu);
 
 
 
