@@ -1,4 +1,5 @@
 $(()=>{setTimeout(()=>{
+  // Прячем меню
   $('#gcAccountUserMenu').hide();
 
   $.getJSON( "/c/sa/user/profile/"+window.accountUserId, (userdata) => {
@@ -15,22 +16,27 @@ $(()=>{setTimeout(()=>{
 
     // Контейнер меню
     $('#gcAccountUserMenu').after(`
-      <div class="leftbar leftbar__body" id="leftbar">
-        <ul class="leftbar__menu menu">
-          <li class="menu__item menu__logo">
-            <svg width="48" height="36" viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M48 36H39.8076V11.1951L28.1512 36H19.8488L8.19244 11.0854V36H0V0H11.3814L24.0275 26.7256L36.6186 0H48V36Z" fill="#EBFF00"/>
-            </svg>
-          </li>
-        </ul>
-        <div class="leftbar__rollup rollup">
-          <div class="rollup__icon">
-            <svg width="25" height="25" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M36 12L24 24L12 12" stroke="#6F767E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M36 24L24 36L12 24" stroke="#6F767E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+      <div class="leftbar" id="leftbar">
+        <div class="leftbar__body">
+          <ul class="gc-account-user-menu">
+            <li class="menu__item menu__logo">
+              <svg width="48" height="36" viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M48 36H39.8076V11.1951L28.1512 36H19.8488L8.19244 11.0854V36H0V0H11.3814L24.0275 26.7256L36.6186 0H48V36Z" fill="#EBFF00"/>
+              </svg>
+            </li>
+          </ul>
+          <div class="leftbar__rollup rollup">
+            <div class="rollup__icon">
+              <svg width="25" height="25" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M36 12L24 24L12 12" stroke="#6F767E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M36 24L24 36L12 24" stroke="#6F767E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="rollup__title">Свернуть меню</div>
           </div>
-          <div class="rollup__title">Свернуть меню</div>
+        </div>
+        <div class="rollup__notifications notifications">
+
         </div>
       </div>
     `);
@@ -38,7 +44,7 @@ $(()=>{setTimeout(()=>{
 
     // Элементы меню
     $.each(window.gcAccountUserMenu.items, (i, el) => {
-      const parent = $(`.gc-account-leftbar .menu-item-${el.id}`)
+      const parent = $(`.gc-account-leftbar .menu-item-${el.id}`);
       const isActive = parent.hasClass('active');
 
       const notifyCount = parent.find('.notify-count').text()
@@ -67,14 +73,11 @@ $(()=>{setTimeout(()=>{
 
       }
 
-
-
-      console.log(userdata);
     
       // Аватар
-      if (i == 0) {
-        $('#leftbar .menu').append(`
-          <li class="menu__item menu__item-${el.id} item ${isActive ? 'active' : ''}">
+      if (el.id == 'profile') {
+        $('#leftbar .gc-account-user-menu').append(`
+          <li class="menu__item menu__item_${el.id} item ${isActive ? 'active' : ''}">
             <a href="${link}" class="item__profile item__header accordeon profile">
               <div class="profile__avatar" style="background-image: url(${userdata.data.logo.image})"></div>
               <div class="profile__info">
@@ -88,10 +91,11 @@ $(()=>{setTimeout(()=>{
         `);
         
         return;
+        
       }
 
-      $('#leftbar .menu').append(`
-        <li class="menu__item menu__item-${el.id} item ${isActive ? 'active' : ''}">
+      $('#leftbar .gc-account-user-menu').append(`
+        <li class="menu__item menu__item_${el.id} item ${isActive ? 'active' : ''}">
           <a href="${link}" class="item__header accordeon">
             <div class="item__icon">
               ${iconsList[el.id]}
@@ -107,29 +111,73 @@ $(()=>{setTimeout(()=>{
     })
 
     // Открытие субменю
-    $('.accordeon').on('click', (e) => {
-      const submenu = $(e.currentTarget).parent().children('.submenu');
-
-      $(document.body).addClass('full-menu');
-
-      $('.accordeon.open ~ .submenu').not(submenu).slideToggle(300);
-      $('.accordeon').not($(e.currentTarget)).removeClass('open')
-
-
-
-      $(e.currentTarget).toggleClass('open')
-      submenu.slideToggle(300);
-    });
+    $('.menu__item:not(.menu__item_notifications_button_small) .accordeon').on('click', toggleSubmenu);
 
 
 
     // Сворачивание меню
-    $('.rollup').on('click', () => {
-      $(document.body).toggleClass('full-menu');
+    $('.rollup').on('click', rollupMenu)
 
-      $('.accordeon.open ~ .submenu').slideToggle(100);
 
+
+
+
+    // Удаляем старое меню
+    $('#gcAccountUserMenu .gc-account-user-menu').remove();
+
+
+
+
+            
+    // Кнопка уведомлений 
+    $('.menu__item_notifications_button_small').on('click', () => {
+      $(document.body).on('mouseup', function close(e) {
+        console.log('hello')
+        const containerBody = $('.rollup__notifications.show');
+
+        if (containerBody.has(e.target).length === 0 && !$(e.target).is(containerBody)){
+          containerBody.hide();
+          containerBody.removeClass('show');
+
+          $(document.body).off('mouseup', close);
+
+        }
+      });
+
+
+      updateNotifications();
+    });
+
+    $('.rollup__notifications').on('click', (e) => {
+      if (e.target.classList.contains('notification__mark-viewed')) {
+        e.preventDefault();
+
+        const groupId = $(e.target).parent().data('groupId');
+
+        $.ajax({
+          url: '/notifications/notifications/viewed',
+          method: 'post',
+          dataType: 'json',
+          data: {id: groupId},
+          success: updateNotifications
+        });
+      } else if (e.target.classList.contains('notifications__mark-viewed-all')) {
+        $.ajax({
+          url: '/notifications/notifications/viewedAll',
+          method: 'post',
+          dataType: 'json',
+          success: updateNotifications
+        });
+      }
     })
+
+
+
+
+
+    // Удаляем меню
+    $('#gcAccountUserMenu').remove();
+
 
   })
 }, 0)})
@@ -151,6 +199,79 @@ $(()=>{setTimeout(()=>{
 
 
 
+function toggleSubmenu(e) {
+  const submenu = $(e.currentTarget).parent().children('.submenu');
+
+  $(document.body).addClass('full-menu');
+
+  $('.accordeon.selected ~ .submenu').not(submenu).slideToggle(300);
+  $('.accordeon').not($(e.currentTarget)).removeClass('selected')
+
+
+
+  $(e.currentTarget).toggleClass('selected')
+  submenu.slideToggle(300);
+}
+
+function rollupMenu() {
+  $(document.body).toggleClass('full-menu');
+
+  $('.accordeon.selected ~ .submenu').slideToggle(100);
+  $('.accordeon.selected').toggleClass('selected');
+
+  
+}
+
+
+function updateNotifications() {
+  const container = $('.rollup__notifications');
+
+  container.toggleClass('show');
+  container.show();
+  container.empty();
+
+  container.append(`
+  <div class="notifications__loader loadingio-spinner-ellipsis-z5i1mb5w45c"><div class="ldio-hxdzskztq9b">
+  <div></div><div></div><div></div><div></div><div></div>
+  </div></div>
+  `);
+
+  $.getJSON("/notifications/notifications/get", (notifications) => {
+    const { data } = notifications;
+
+    container.empty();
+
+
+  console.log(notifications);
+    if (!data.groups.length) {
+      container.append(`
+        <div class="notifications__message">Уведомлений для вас еще нет</div>
+      `);
+    } else {
+      const blocks = data.groups.map((el) => `
+        <a href="${el.helper.href}" class="notifications__notification notification ${el.status == 'new' && 'new'}" data-group-id="${el.id}">
+          <div class="notification__image">${el.helper.first_user_thumbnail}</div>
+          <div class="notification__content">${el.helper.content}</div>
+          <div class="notification__date">${el.helper.display_date}</div>
+          <div class="notification__mark-viewed">×</div>
+
+        </a>
+      `)
+
+      container.append(`
+        <div class="notifications__header">
+          <div class="notifications__all">Уведомления ${+data.count.new !== 0 ? `(${data.count.new})` : ''}</div>
+          <div class="notifications__mark-viewed-all">Отметить прочитанными</div>
+        </div>
+        <div class="notifications__body">
+          ${blocks.join('\n')}
+        </div>
+        <a href="/notifications/notifications/all" class="notifications__footer">Все уведомления</a>
+      `);
+    }
+
+  })
+}
 
 
 
