@@ -1,7 +1,3 @@
-@import url('https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/230/h/381a74876d2889f7ce1f8e8b9c62fae7.css');
-@import url('https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/95/h/c7c8020580cc5e710e450343e77c3d8f.css');
-
-
 /* Общий класс блок */
 .block {
   background: var(--color-gray);
@@ -30,8 +26,11 @@
 }
 
 .xdget-root {
+  background: #000000;
+}
+.gc-main-content:not(.gc-user-admin) .xdget-root {
   position: absolute;
-    background: #000000;
+   
   top: 0;
   left: 0;
   right: 0;
@@ -264,6 +263,11 @@ body .stream-table tbody tr td {
   height: 32px;
 }
 
+.button-bot {
+  justify-content: center;
+  grid-column: 1/3;
+}
+
 
 .schedule {
   margin-top: 20px;
@@ -278,19 +282,17 @@ body .stream-table tbody tr td {
 
 /* Виджет */
 .talks-widget-button {
-  background: url('https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/78/h/9ee98706b6196de817aa784e0964067b.svg') no-repeat;
+  background: url('https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/78/h/9ee9870….svg') no-repeat;
   background-color: var(--color-black);
   background-size: 70%;
   background-position: center center;
   box-shadow: 0px 9px 24px rgba(235, 255, 0, 0.34);
 
   border: 2px solid var(--color-yellow);
-
-  transition: 0.2s;
 }
 
 .talks-widget-button:hover {
-  box-shadow: 0px 9px 46px rgba(235, 255, 0, 0.5);
+  box-shadow: 0px 9px 46px rgba(235, 255, 0, 0.34);
 }
 
 .talks-widget-button .comments-icon {
