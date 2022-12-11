@@ -264,11 +264,6 @@ body .stream-table tbody tr td {
   height: 32px;
 }
 
-.button-bot {
-  justify-content: center;
-  grid-column: 1/3;
-}
-
 
 .schedule {
   margin-top: 20px;
