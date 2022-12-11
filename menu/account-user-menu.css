@@ -2,20 +2,33 @@
 @import url('https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/95/h/c7c8020580cc5e710e450343e77c3d8f.css');
 
 
-:root {
-  --color-gray: #1A1D1F;
-  --color-light-gray: #6F767E;
-  --color-black: #111315;
-  --color-white: #ffffff;
-  --color-gray-white: #F4F4F4;
-  --color-yellow: #EBFF00;
 
-  --transition-default: 0.2s;
-  --transition-open: 0.3s;
-
+/* Фикс страницы */
+@media screen and (min-width: 768px) {
+  body .talks-widget-window,
+  #kanban .content,
+  .with-left-menu .gc-into-main-content,
+  body .app-bar {
+    left: 90px;
+  }
+  
+  body .talks-widget-window {
+    width: calc(100% - 90px);
+  }
+  
+  body iframe.fake {
+    left: 20px;
+  }
+  
+  body .gc-main-content.with-left-menu,
+  body .resp-full-window.full-window-size {
+    margin-left: 90px;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
 }
-
-
 
 
 /* leftbar */
@@ -24,8 +37,6 @@
   top: 0;
   left: 0;
 
- 
-  height: 100vh;
 
   font-family: 'Bebas Neue', sans-serif;
 
@@ -41,7 +52,7 @@
   display: grid;
   grid-template-rows: auto 50px;
   width: 90px;
-  height: 100%;
+  height: 100vh;
 
   
   background-color: var(--color-gray);
@@ -237,6 +248,7 @@
   line-height: 22px;
   font-weight: bold;
   text-decoration: none;
+  white-space: nowrap;
 
   transition: var(--transition-default)
   
@@ -321,7 +333,7 @@
 body:not(.full-menu) .item__notify {
   position: absolute;
 
-  animation: var(--transition-open) fadein forwards;
+  /* animation: var(--transition-open) fadein forwards; */
   left: 60px;
   bottom: 10px;
 
@@ -349,12 +361,12 @@ body:not(.full-menu) .item__notify {
 /* Подменю */
 .submenu {
   display: none;
+
+  transition: padding swing var(--transition-open);
 }
 
 .submenu__body {
-  padding-top: 10px;
-  padding-left: 70px;
-  padding-bottom: 30px;
+  padding: 10px 0 30px 70px;
 }
 
 .submenu__item {
@@ -408,16 +420,38 @@ body:not(.full-menu) .item__notify {
 /* Сворачивание меню */
 
 @media screen and (min-width: 768px) {
+  body .talks-widget-window,
+  body .with-left-menu .gc-into-main-content,
+  body iframe.fake,
+  body #kanban .content,
+  body .app-bar,
+  body .resp-full-window.full-window-size,
   body .gc-main-content.with-left-menu {
     transition: var(--transition-open);
   }
   
+
+  body.full-menu .resp-full-window.full-window-size,
   body.full-menu .gc-main-content.with-left-menu {
-    margin-left: 280px;
+    margin-left: 300px;
   }
-  
+
+  body.full-menu .with-left-menu .gc-into-main-content,
+  body.full-menu #kanban .content,
+  body.full-menu .app-bar {
+    left: 300px;
+  }
+
+  body.full-menu iframe.fake {
+    left: 228px;
+  }
   body.full-menu .leftbar__body {
     width: 300px;
+  }
+
+  body.full-menu .talks-widget-window {
+    left: 300px;
+    width: calc(100% - 300px);
   }
   
   body.full-menu .gc-account-user-menu {
@@ -656,9 +690,20 @@ body:not(.full-menu) .item__notify {
 
 /* Адаптив */
 @media screen and (max-width: 768px) {
-  .gc-main-content.with-left-menu {
+  body iframe.fake,
+  body .talks-widget-window,
+  #kanban .content,
+  .with-left-menu .gc-into-main-content,
+  body .app-bar {
+    top: 62px;
+  }
+  
+  
+  body .gc-main-content.with-left-menu,
+  body .resp-full-window.full-window-size {
     margin-top: 62px;
   }
+    
 
   #leftbar {
     width: 100vw;
@@ -674,7 +719,6 @@ body:not(.full-menu) .item__notify {
 
   .leftbar__body {
     display: none;
-    height: 100vh;
     width: 100%;
   }
 

@@ -3,9 +3,9 @@
 
 $(()=>{setTimeout(()=>{
 
-  if (window.accountUserId != 281231591) {
-    return;
-  }
+  // Фикс страниц Профиль, Смена пароля, Чатиум
+  $('script[src*="/stat/counter"]').remove();
+
   // Прячем меню
   $('#gcAccountUserMenu').hide();
 
@@ -77,22 +77,46 @@ $(()=>{setTimeout(()=>{
       const isActive = parent.hasClass('active');
 
       const notifyCount = parent.find('.notify-count').text()
-    
-      console.log(el);
+  
       const label = el.id == 'notifications_button_small' ? 'Уведомления' : el.label;
-      const link = el.id == 'notifications_button_small' ?  '/notifications/notifications/all' : el.subitems.length > 1 ? 'javascript:void(0)' : el.subitems[0]?.url;
+      let link = el.id == 'notifications_button_small' ?  '/notifications/notifications/all' : el.subitems.length > 1 ? 'javascript:void(0)' : el.subitems[0]?.url;
+
+      
+
+      // Фикс с подменой страниц
+      if (el.id == 'chatium') {
+        link = '/chatium';
+        el.subitems = [];
+      }
+
 
       const arrow = el.subitems.length > 1 ? '<div class="item__arrow"> <svg class="strelka-bottom-3" height="14" viewBox="0 0 5 9"><path d="M0.419,9.000 L0.003,8.606 L4.164,4.500 L0.003,0.394 L0.419,0.000 L4.997,4.500 L0.419,9.000 Z" fill="#6F767E"></div>': '';
 
       let submenu = '';
 
+
+
+
       if (el.subitems.length > 1) {
         const subitems = [];
     
         $.each(el.subitems, (i, el) => {
+          let url = el.url;
+
+          switch (el.url) {
+            case '/user/my/profile':
+              url = '/profile';
+              break;
+            case '/user/my/changePassword':
+              url = '/changePassword';
+              break;
+            default:
+              url = url;
+          };
+    
           subitems.push(`
             <div class="submenu__item">
-              <a class="submenu__link" href="${el.url}">${el.label}</a>
+              <a class="submenu__link" href="${url}">${el.label}</a>
               <span class="submenu__notify"></span>
             </div>
           `)
@@ -112,7 +136,7 @@ $(()=>{setTimeout(()=>{
               <div class="profile__avatar" style="background-image: url(${el.iconUrl})"></div>
               <div class="profile__info">
                 <div class="profile__name">${userdata.data.title}</div>
-                <div class="profile__email">${userdata.data.blocks[1]?.title}</div>
+                <div class="profile__email">${userdata.data.blocks.find((el) => el.description == "Эл. адрес")?.title}</div>
               </div>
               ${arrow}
             </a>
@@ -218,11 +242,8 @@ $(()=>{setTimeout(()=>{
     });
 
 
-    $(window).on('resize', () => {
-      if(window.matchMedia('(max-width: 768px)').matches){
-        $(document.body).addClass('full-menu');
-      }
-    })
+    $(window).on('resize', onResize)
+    onResize()
     
 
 
@@ -249,7 +270,11 @@ $(()=>{setTimeout(()=>{
 
 
 
-
+function onResize () {
+  if(window.matchMedia('(max-width: 768px)').matches){
+    $(document.body).addClass('full-menu');
+  }
+}
 
 function toggleSubmenu(e) {
   const submenu = $(e.currentTarget).parent().children('.submenu');
@@ -300,12 +325,11 @@ function updateNotifications() {
       `);
     } else {
       const blocks = data.groups.map((el) => `
-        <a href="${el.helper.href}" class="notifications__notification notification ${el.status == 'new' && 'new'}" data-group-id="${el.id}">
-          <div class="notification__image">${el.helper.first_user_thumbnail}</div>
-          <div class="notification__content">${el.helper.content}</div>
-          <div class="notification__date">${el.helper.display_date}</div>
+        <a href="${el.helper?.href || 'javascript:void(0)'}" class="notifications__notification notification ${el.status == 'new' && 'new'}" data-group-id="${el.id}">
+          <div class="notification__image">${el.helper?.first_user_thumbnail || ''}</div>
+          <div class="notification__content">${el.helper?.content || ''}</div>
+          <div class="notification__date">${el.helper?.display_date || ''}</div>
           <div class="notification__mark-viewed">×</div>
-
         </a>
       `)
 
