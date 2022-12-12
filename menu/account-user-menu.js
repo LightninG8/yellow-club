@@ -84,10 +84,10 @@ $(()=>{setTimeout(()=>{
       
 
       // Фикс с подменой страниц
-      if (el.id == 'chatium') {
-        link = '/chatium';
-        el.subitems = [];
-      }
+      // if (el.id == 'chatium') {
+      //   link = '/chatium';
+      //   el.subitems = [];
+      // }
 
 
       const arrow = el.subitems.length > 1 ? '<div class="item__arrow"> <svg class="strelka-bottom-3" height="14" viewBox="0 0 5 9"><path d="M0.419,9.000 L0.003,8.606 L4.164,4.500 L0.003,0.394 L0.419,0.000 L4.997,4.500 L0.419,9.000 Z" fill="#6F767E"></div>': '';
@@ -103,16 +103,16 @@ $(()=>{setTimeout(()=>{
         $.each(el.subitems, (i, el) => {
           let url = el.url;
 
-          switch (el.url) {
-            case '/user/my/profile':
-              url = '/profile';
-              break;
-            case '/user/my/changePassword':
-              url = '/changePassword';
-              break;
-            default:
-              url = url;
-          };
+          // switch (el.url) {
+          //   case '/user/my/profile':
+          //     url = '/profile';
+          //     break;
+          //   case '/user/my/changePassword':
+          //     url = '/changePassword';
+          //     break;
+          //   default:
+          //     url = url;
+          // };
     
           subitems.push(`
             <div class="submenu__item">
@@ -293,7 +293,7 @@ function toggleSubmenu(e) {
 function rollupMenu() {
   $(document.body).toggleClass('full-menu');
 
-  $('.accordeon.selected ~ .submenu').slideToggle(100);
+  $('.accordeon.selected ~ .submenu').slideToggle(300);
   $('.accordeon.selected').toggleClass('selected');
 
   

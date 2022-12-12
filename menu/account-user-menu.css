@@ -371,6 +371,7 @@ body:not(.full-menu) .item__notify {
 
 .submenu__item {
   margin-top: 5px;
+  white-space: nowrap;
 }
 
 .submenu__link {
@@ -533,7 +534,7 @@ body:not(.full-menu) .item__notify {
 .notifications__notification {
   position: relative;
 
-  height: 75px;
+  min-height: 75px;
   padding: 14px 14px 10px 20px;
   display: flex;
 
