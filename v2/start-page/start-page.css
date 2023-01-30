@@ -1,0 +1,319 @@
+/* Контейнер */
+.xdget-root {
+  --color-white: #ffffff;
+  --color-yellow: #FFDA00;
+  --color-blue: #004FFF;
+  --color-red: #E8635D;
+  --color-green: #00FF57;
+
+  position: relative;
+
+  background: url(https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/393/h/5eb404dc1ac38dbcf5788e3f586bd5be.jpg) no-repeat;
+  background-size: cover;
+
+  min-height: 100vh;
+}
+
+
+.xdget-common-container.row {
+  padding: 0;
+  margin: 0;
+}
+
+.xdget-block.xdget-col {
+  padding: 0;
+  margin: 0;
+}
+
+.stream-table {
+  padding: 0;
+}
+
+.gc-main-content .main-page-block .container {
+  max-width: none;
+  margin: 0;
+}
+
+.gc-main-content:not(.gc-user-admin) .xdget-root {
+  position: absolute;
+   
+  top: 0;
+  left: 0;
+  right: 0;
+  
+  min-height: 100vh;
+}
+
+
+
+
+
+
+
+
+/* Кнопки */
+#xdget943516 .col-md-12 {
+  position: static;
+}
+
+
+body .xdget-root .stream-table * {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.stream-table tr {
+  position: absolute;
+  display: inline-block;
+}
+
+.stream-table tr a {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  position: relative;
+
+}
+
+
+body .stream-table tr td:hover{
+  background: none;
+}
+
+body .stream-table tr td:hover a:before{
+  box-shadow: 0 0 13px 1px var(--color-yellow);
+}
+
+
+.stream-table tr a:before {
+  content: '';
+  position: relative;
+
+  display: block;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 25px;
+
+  background: red;
+  border-radius: 50%;
+
+  background-size: cover;
+
+  transition: 0.2s;
+
+}
+
+
+
+.stream-table .stream-title {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 45px;
+  /* identical to box height */
+  
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  
+  color: var(--color-white);
+}
+
+.stream-table .stream-title  + div {
+  max-width: 385px;
+
+  font-family: 'Gilroy';
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  
+  color: var(--color-white);
+}
+
+tr:not([data-training-id="697759655"]) .stream-title + div {
+  display: none;
+}
+
+tr[data-training-id="697759655"] .stream-title + div b{
+  display: none;
+}
+
+tr[data-training-id="697759655"] .stream-title + div b{
+  display: none;
+}
+
+
+tr[data-training-id="697759637"] a:before {
+  background-image: url(https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/242/h/420ab9b7eb2a893ddb8e851d3031e6e9.png)
+}
+
+tr[data-training-id="697759638"] a:before { 
+  background-image: url(https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/228/h/cdfb5b24497b2122ab1e741a5ff1638b.png)
+}
+
+tr[data-training-id="697759655"] a:before {
+  background-image: url(https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/332/h/cd9f0a0ff26e63bbaf90427ef01df507.png)
+}
+
+
+
+tr[data-training-id="697759637"] {
+  top: 7.6%;
+  left: 50%;
+
+  transform: translate(calc(-50% - 240px), 0)
+}
+
+tr[data-training-id="697759638"] { 
+  top: 7.6%;
+  left: 50%;
+
+  transform: translate(calc(-50% + 240px), 0)
+}
+
+tr[data-training-id="697759655"] {
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+/* Конец Кнопки */
+
+
+
+/* Линии */
+
+.line-1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, 0);
+}
+
+.line-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, 0);
+
+}
+
+.line-3 {
+  position: absolute;
+}
+
+/* Конец Линии */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Конец Контейнер */
+
+
+/* Фон огоньки */
+/* .light__blur {
+  position: absolute;
+
+  width: 33.75%;
+  height: 75%;
+  filter: blur(200px);
+}
+
+.light__blur_5 {
+  width: 40%;
+  height: 88.6%;
+  left: -8.5%;
+  top: 56.7%;
+
+  background: var(--color-yellow);
+
+}
+
+.light__blur_4 {
+  left: -12.4%;
+  top: 44.6%;
+  
+  background: var(--color-blue);
+  animation: fade 20s infinite;
+  animation-delay: 4s;
+}
+
+.light__blur_3 {
+  left: 9.63%;
+  top: 73.7%;
+  
+  background: var(--color-red);
+  animation: fade 20s infinite;
+  animation-delay: 3s;
+}
+
+.light__blur_2 {
+  left: 68.33%;
+  top: 73.7%;
+  
+  background: var(--color-blue);
+  animation: fade 20s infinite;
+  animation-delay: 2s;
+}
+
+.light__blur_1 {
+  left: 84.53%;
+  top: 41.15%;
+  
+  background: var(--color-green);
+
+  animation: fade 20s infinite;
+  animation-delay: 1s;
+}
+
+@keyframes fade {
+  from {
+    background: var(--color-yellow);
+  }
+
+  25% {
+    background: var(--color-red);
+  }
+
+  50% {
+    background: var(--color-blue);
+  }
+
+  75% {
+    background: var(--color-green);
+  }
+
+  to {
+    background: var(--color-yellow);
+  }
+} */
+/* Конец Фон огоньки */

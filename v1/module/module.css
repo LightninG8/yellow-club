@@ -27,19 +27,7 @@
 .xdget-root {
   background: #000000;
 }
-.gc-main-content:not(.gc-user-admin) .xdget-root {
-  position: absolute;
-   
-  top: 0;
-  left: 0;
-  right: 0;
-  
-  min-height: 100vh;
-}
 
-.xdget-root {
-  background: #000000;
-}
 .gc-main-content:not(.gc-user-admin) .xdget-root {
   position: absolute;
    
