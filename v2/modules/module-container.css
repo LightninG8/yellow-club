@@ -1,0 +1,81 @@
+/* Контейнер */
+.xdget-common-container.row {
+  padding: 0;
+  margin: 0;
+}
+
+.xdget-block.xdget-col {
+  padding: 0;
+  margin: 0;
+}
+
+.gc-main-content .main-page-block {
+  position: relative;
+}
+
+.gc-main-content .main-page-block .container {
+  max-width: none;
+}
+
+.xdget-root {
+  background-color: #000000;
+
+
+  background-image: url('https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/187/h/9005cbd82386faa037a4170ebbc57e58.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center bottom;
+}
+.gc-main-content:not(.gc-user-admin) .xdget-root {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+.gc-main-content:not(.gc-user-admin) .container {
+  margin: 0;
+  padding: 0;
+
+  position: static !important;
+}
+
+.gc-main-content:not(.gc-user-admin) .xdget-root {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+.xdget-block.xdget-div.xdget-common-container.div {
+  padding: 60px 40px;
+}
+
+.trainings-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  grid-column-gap: 25px;
+}
+
+
+.xdget-block.xdget-div.trainings-dashboard.xdget-common-container.div {
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .xdget-block.xdget-div.xdget-common-container.div {
+    padding: 30px 20px;
+  }
+
+  .trainings-dashboard {
+    grid-template-columns: 1fr;
+  }
+
+
+}

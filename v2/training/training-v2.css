@@ -1,0 +1,120 @@
+/* Фикс карточек */
+
+.stream-table tr.no-lessons.no-children td {
+  opacity: 1;
+}
+.stream-table tr.no-public td {
+  opacity: 1;
+}
+
+/* Модули таблица */
+.stream-table tbody {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, clamp(220px, 25%, 300px));
+  grid-auto-flow: row;
+  grid-auto-rows: 280px;
+  grid-gap: 20px;
+}
+
+.xdget-trainingList .stream-table tbody tr {
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.stream-table tr td a {
+  display: grid;
+  height: 100%;
+
+  align-items: end;
+
+  background-size: cover;
+}
+
+.stream-title + div {
+  display: none;
+}
+
+.stream-table tr td a {
+  display: grid;
+  padding: 25px;
+  height: 100%;
+
+  align-items: end;
+}
+
+.stream-title + div {
+  display: none;
+}
+
+.stream-table tr td .stream-title {
+  padding: 0;
+  font-family: "Bebas Neue";
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 36px;
+}
+
+/* Картинки карточек */
+/* Картинки карточек */
+.stream-table tr[data-training-id="699760892"] td a {
+  background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/140/h/504c3626cd70ef2d8f878b6b44b2020c.png");
+}
+
+.stream-table tr[data-training-id="699763764"] td a {
+  background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/290/h/84c4e6e054cd1add5ad5164d92d84d4d.png");
+}
+
+.stream-table tr[data-training-id="699765992"] td a {
+  background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/263/h/d19c9c9f69aa2ef95e2c6e359356c24b.png");
+}
+
+.stream-table tr[data-training-id="699768331"] td a {
+  background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/393/h/7abcb5fe859c28a3cf2f7b7373aa1d8f.png");
+}
+
+.stream-table tr[data-training-id="699769799"] td a {
+  background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/192/h/9335346cd709d5a84a0a6f0a5d838dab.png");
+}
+
+.stream-table tr[data-training-id="699778208"] td a {
+  background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/185/h/05d81ab18f343a316f6477c2cbf850ad.png");
+}
+
+.stream-table tr[data-training-id="699781704"] td a {
+  background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/188/h/680e3b1b316373893902ec4aaebf5c3e.png");
+}
+
+.stream-table tr[data-training-id="699784170"] td a {
+  background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/104/h/5091ec35b85c025587b4ef66d049f21e.png");
+}
+
+/* Шапка */
+.header-image img {
+  max-width: 100%;
+  width: 100%;
+}
+
+#header-image-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .stream-table tbody {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 204px;
+    grid-gap: 17px;
+  }
+
+  .stream-table tr td .stream-title {
+    font-size: 26px;
+    line-height: 26px;
+  }
+
+  #header-image-desktop {
+    display: none;
+  }
+
+  #header-image-mobile {
+    display: block;
+  }
+}

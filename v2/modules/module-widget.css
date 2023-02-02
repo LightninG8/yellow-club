@@ -1,0 +1,19 @@
+/* Виджет */
+.talks-widget-button {
+  background: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/78/h/9ee98706b6196de817aa784e0964067b.svg")
+    no-repeat;
+  background-color: var(--color-black);
+  background-size: 70%;
+  background-position: center center;
+  box-shadow: 0px 9px 24px rgba(235, 255, 0, 0.34);
+
+  border: 2px solid var(--color-yellow);
+}
+
+.talks-widget-button:hover {
+  box-shadow: 0px 9px 46px rgba(235, 255, 0, 0.34);
+}
+
+.talks-widget-button .comments-icon {
+  display: none;
+}
