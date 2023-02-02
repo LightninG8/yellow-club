@@ -1,0 +1,286 @@
+    /* Общий класс блок */
+    .block {
+      background: var(--color-gray);
+      border: 1px solid var(--color-extra-gray);
+      border-radius: 10px;
+      
+      transition: 0.2s;
+    }
+
+
+    /* Контейнер */
+    .xdget-common-container.row {
+      padding: 0;
+      margin: 0;
+    }
+
+    .xdget-block.xdget-col {
+      padding: 0;
+      margin: 0;
+    }
+
+    .gc-main-content .main-page-block {
+      position: relative;
+    }
+
+    .gc-main-content .main-page-block .container {
+      max-width: none;
+    }
+
+    .xdget-root {
+      background: #000000;
+    }
+    .gc-main-content:not(.gc-user-admin) .xdget-root {
+      position: absolute;
+      
+      top: 0;
+      left: 0;
+      right: 0;
+      
+      min-height: calc(var(--vh, 1vh) * 100);
+    }
+
+    .gc-main-content:not(.gc-user-admin) .container {
+      margin: 0;
+      padding: 0;
+
+      position: static !important;
+    }
+
+    .xdget-root {
+      background: #000000;
+    }
+    .gc-main-content:not(.gc-user-admin) .xdget-root {
+      position: absolute;
+      
+      top: 0;
+      left: 0;
+      right: 0;
+      
+      min-height: calc(var(--vh, 1vh) * 100);
+    }
+
+
+    /* Шапка */
+    .module-header {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+
+      border-bottom: 1px solid var(--color-gray);
+    }
+
+    .module-header-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 48px;
+
+
+      color: var(--color-white);
+    }
+
+    .module-header-back-to span,
+    .module-header-back-to svg path {
+      transition: var(--transition-default);
+    }
+
+    .module-header-back-to:hover span,
+    .module-header-back-to:hover svg path {
+      color: var(--color-yellow);
+      fill: var(--color-yellow);
+    }
+
+
+
+    .module-header-back-to {
+      font-family: 'Gilroy';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 21px;
+      display: flex;
+      align-items: center;
+
+      color: var(--color-light-gray);
+      cursor: pointer;
+    }
+
+    .module-header-back-to span {
+      margin-top: 2px;
+      margin-left: 5px;
+    }
+
+
+
+    .xdget-block.xdget-div.xdget-common-container.div {
+      padding: 60px 40px;
+    }
+
+
+
+
+
+
+
+
+    /* Виджет */
+    .talks-widget-button {
+      background: url('https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/78/h/9ee98706b6196de817aa784e0964067b.svg') no-repeat;
+      background-color: var(--color-black);
+      background-size: 70%;
+      background-position: center center;
+      box-shadow: 0px 9px 24px rgba(235, 255, 0, 0.34);
+
+      border: 2px solid var(--color-yellow);
+    }
+
+    .talks-widget-button:hover {
+      box-shadow: 0px 9px 46px rgba(235, 255, 0, 0.34);
+    }
+
+    .talks-widget-button .comments-icon {
+      display: none;
+    }
+
+
+
+
+    /* Уроки */
+    .xdget-trainingList {
+      padding: 0;
+      margin: 0;
+      
+      background: none;
+    }
+    .xdget-trainingList .stream-table {
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .xdget-trainingList tbody {
+      display: grid;
+      grid-template-columns: repeat(2, clamp(200px, 50%, 625px));
+      grid-gap: 20px 20px;
+
+      grid-auto-rows:  287px;
+    }
+
+    .xdget-trainingList tbody tr {
+      display: block;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      
+      font-family: 'Gilroy';
+      
+      border: 1px solid var(--color-extra-gray);
+      border-radius: 10px;
+      background: var(--color-gray);
+    
+      transition: var(--transition-default);
+    }
+
+
+
+    .xdget-trainingList tbody tr:hover {
+      border: 1px solid var(--color-yellow);
+      box-shadow: 0 0 13px 1px var(--color-yellow);
+    }
+
+    .xdget-trainingList tbody tr td {
+      padding: 0;
+      margin: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    body .stream-table tr td:hover{
+      background: none;
+    }
+
+    .xdget-trainingList tbody tr a {
+      position: relative;
+      display: grid;
+      grid-template-rows: 1fr 87px;;
+
+      width: 100%;
+      height: 100%;
+    }
+
+    .xdget-trainingList tbody tr a:before {
+      content: '';
+      display: block;
+      background-image: url('https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/340/h/607d46fa112d29bdfd12ece25679faef.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      background-position: center center;
+    }
+
+    .stream-table .stream-title {
+      display: grid;
+      align-items: center;
+      padding: 5px 20px;
+
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 29px;
+
+
+      border-top: 1px solid var(--color-extra-gray);
+      color: var(--color-white);
+    }
+
+    .stream-table .stream-title + div {
+      display: none;
+    }
+
+
+    /* Картинки */
+    .xdget-trainingList tbody tr[data-training-id="697759636"] a:before {
+      background-image: url('https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/430/h/1bba8e2aa71837cc9fb95e2fb116cefc.jpg');
+    }
+
+
+
+
+    @media screen and (max-width: 768px) {
+      .xdget-trainingList tbody {
+        display: grid;
+        grid-template-columns: 1fr;
+
+      }
+
+      .xdget-block.xdget-div.xdget-common-container.div {
+        padding: 30px 20px;
+      }
+
+      .module-title {
+        font-size: 40px;
+        line-height: 40px;
+      }
+
+      .module-header {
+        flex-direction: column-reverse;
+        justify-content: center;
+      }
+      
+      .module-header-title {
+        margin-top: 30px;
+        font-size: 36px;
+        line-height: 36px;
+      }
+
+      .xdget-trainingList tbody {
+        grid-auto-rows: 240px;
+      }
+
+      .xdget-trainingList tbody tr a {
+        grid-template-rows: 1fr 69px;
+      }
+
+    }

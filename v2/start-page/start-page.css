@@ -10,8 +10,15 @@
 
   background: url(https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/393/h/5eb404dc1ac38dbcf5788e3f586bd5be.jpg) no-repeat;
   background-size: cover;
+  overflow: hidden;
 
-  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  min-height: calc(var(--vh, 1vh) * 100);
+  padding-top: 40px;
+  padding-bottom: 80px;
 }
 
 
@@ -25,8 +32,9 @@
   margin: 0;
 }
 
-.stream-table {
+body .stream-table {
   padding: 0;
+  margin: 0;
 }
 
 .gc-main-content .main-page-block .container {
@@ -41,10 +49,10 @@
   left: 0;
   right: 0;
   
-  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
 }
 
-
+/* Конец Контейнер */
 
 
 
@@ -64,7 +72,6 @@ body .xdget-root .stream-table * {
 }
 
 .stream-table tr {
-  position: absolute;
   display: inline-block;
 }
 
@@ -95,7 +102,6 @@ body .stream-table tr td:hover a:before{
   height: 160px;
   margin-bottom: 25px;
 
-  background: red;
   border-radius: 50%;
 
   background-size: cover;
@@ -160,7 +166,7 @@ tr[data-training-id="697759655"] a:before {
 }
 
 
-
+/* 
 tr[data-training-id="697759637"] {
   top: 7.6%;
   left: 50%;
@@ -179,141 +185,161 @@ tr[data-training-id="697759655"] {
   top: 62%;
   left: 50%;
   transform: translate(-50%, 0);
+} */
+
+
+.stream-table tbody {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  justify-items: center;
+  grid-column-gap: 250px;
+  grid-row-gap: 400px;
 }
+
+tr[data-training-id="697759637"] {
+
+}
+
+tr[data-training-id="697759638"] { 
+
+}
+
+tr[data-training-id="697759655"] {
+  grid-column: 1/3;
+}
+
+
+.noaccess-mode-show {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+
+
 /* Конец Кнопки */
 
 
 
 /* Линии */
 
-.line-1 {
+#line-1-2 {
   position: absolute;
-  top: 50%;
+  top: 299px;
   left: 50%;
 
+  transform: translateX(-50%);
+
+}
+
+
+#line-3 {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
   transform: translate(-50%, 0);
 }
 
-.line-2 {
+
+
+
+@keyframes stroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+#start {
+  position: absolute;
+  top: 640px;
+  left: 50%;
+  transform: translateX(-113%)
+}
+
+
+
+
+#line-1-2-mob {
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -85%);
 
-  transform: translate(-50%, 0);
-
+  display: none;
 }
 
-.line-3 {
+#line-3-mob {
+  display: none;
+
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 220%);
+
 }
 
+#start-mob {
+  position: absolute;
+
+  top: 48%;
+  left: 50%;
+
+  transform: translateX(-120%);
+  display: none;
+}
 /* Конец Линии */
 
 
 
 
+@media screen and (max-width: 768px) { 
+  .gc-user-logined {
+    height: calc(var(--vh, 1vh) * 100 - 62px);
+  }
+  body .gc-main-content .xdget-root {
+    background-image: url(https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/74/h/fb417244cc9819e8c7176754084f98ab.jpg);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Конец Контейнер */
-
-
-/* Фон огоньки */
-/* .light__blur {
-  position: absolute;
-
-  width: 33.75%;
-  height: 75%;
-  filter: blur(200px);
-}
-
-.light__blur_5 {
-  width: 40%;
-  height: 88.6%;
-  left: -8.5%;
-  top: 56.7%;
-
-  background: var(--color-yellow);
-
-}
-
-.light__blur_4 {
-  left: -12.4%;
-  top: 44.6%;
-  
-  background: var(--color-blue);
-  animation: fade 20s infinite;
-  animation-delay: 4s;
-}
-
-.light__blur_3 {
-  left: 9.63%;
-  top: 73.7%;
-  
-  background: var(--color-red);
-  animation: fade 20s infinite;
-  animation-delay: 3s;
-}
-
-.light__blur_2 {
-  left: 68.33%;
-  top: 73.7%;
-  
-  background: var(--color-blue);
-  animation: fade 20s infinite;
-  animation-delay: 2s;
-}
-
-.light__blur_1 {
-  left: 84.53%;
-  top: 41.15%;
-  
-  background: var(--color-green);
-
-  animation: fade 20s infinite;
-  animation-delay: 1s;
-}
-
-@keyframes fade {
-  from {
-    background: var(--color-yellow);
+    min-height: calc(var(--vh, 1vh) * 100 - 62px) !important;
+    padding: 0;
   }
 
-  25% {
-    background: var(--color-red);
+  .stream-table tr a:before {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 10px;
   }
 
-  50% {
-    background: var(--color-blue);
+  .stream-table .stream-title {
+    font-size: 18px;
+    line-height: 18px;
   }
 
-  75% {
-    background: var(--color-green);
+  .stream-table .stream-title + div {
+    font-size: 11px;
+    line-height: 14px;
+
+    max-width: 208px;
   }
 
-  to {
-    background: var(--color-yellow);
+
+  .stream-table tbody {
+    grid-column-gap: 130px;
+    grid-row-gap: 230px;
+
+    transform: translateY(-10%);
   }
-} */
-/* Конец Фон огоньки */
+
+  #line-1-2,
+  #line-3,
+  #start {
+    display: none;
+  }
+
+  #line-1-2-mob ,
+  #line-3-mob,
+  #start-mob {
+    display: block;
+  }
+
+}
