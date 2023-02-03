@@ -248,6 +248,10 @@ ul.lesson-list li {
 
 }
 
+.lesson-starts.empty {
+  visibility: hidden;
+}
+
 .lesson-starts span {
   margin-left: 10px;
 
@@ -263,6 +267,7 @@ ul.lesson-list li {
 }
 
 
+.task-status-answered,
 .task-status-reached,
 .task-status-has {
   display: none;
@@ -279,6 +284,7 @@ ul.lesson-list li {
   color: #EBFF00;
 }
 
+.task-status-answered span,
 .task-status-reached span,
 .task-status-has span {
   white-space: nowrap;
@@ -288,11 +294,12 @@ ul.lesson-list li {
 .task-status-reached {
   color: var(--color-yellow);
 }
-
+.task-status-answered,
 .task-status-has{
   color: var(--color-light-gray);
 }
 
+.user-state-answered .task-status-answered,
 .user-state-accomplished .task-status-reached,
 .user-state-has_mission .task-status-has {
   display: flex;

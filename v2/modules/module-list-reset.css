@@ -9,6 +9,11 @@
   margin: 20px 0;
 }
 
+.stream-table tbody {
+  display: grid;
+  grid-gap: 20px;
+}
+
 
 .xdget-trainingList tbody tr {
   display: block;
@@ -39,6 +44,13 @@
   height: 100%;
 }
 
+.xdget-trainingList a {
+  display: block;
+  height: 100%;
+
+  padding: 20px;
+}
+
 body .stream-table tr td:hover {
   background: none;
 }
@@ -48,11 +60,35 @@ body .stream-table tr td:hover {
 .stream-table .stream-title {
   display: grid;
   align-items: center;
-  padding: 5px 20px;
 
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
 
   color: var(--color-white);
+}
+
+.stream-table .stream-title + div {
+  margin-top: 5px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: var(--color-light-gray);
+}
+
+
+
+  
+@media screen and (max-width: 768px) {
+  .stream-table .stream-title  {
+    font-size: 18px;
+    line-height: 21px;
+    
+  }
+  
+  .stream-table .stream-title + div {
+    font-size: 16px;
+    line-height: 19px;
+  }
 }
