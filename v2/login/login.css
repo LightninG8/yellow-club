@@ -1,0 +1,258 @@
+.xdget-root {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  background: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/86/h/e5a125791d2092e93a70f12a723ae2d6.jpg")
+    no-repeat;
+
+  background-size: cover;
+}
+
+.login-form-wrapper {
+  display: grid;
+  grid-template-columns: 0.375fr 0.625fr;
+  width: 960px;
+  height: 475px;
+
+  overflow: hidden;
+  border-radius: 35px;
+}
+
+.login-form-wrapper-bg {
+  background: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/27/h/5a58244f05637af854ad62970d98d597.jpg")
+    no-repeat;
+  background-size: cover;
+  width: 360px;
+}
+
+.xdget-loginUserForm.standard-form {
+  max-width: none;
+  margin: 0;
+  padding-top: 90px;
+
+  background: var(--color-gray);
+}
+
+#xdget513946,
+#xdget41784,
+#xdget750892 {
+  font-family: "Gilroy";
+  font-weight: 600;
+  font-size: 33px;
+  line-height: 39px;
+
+  color: var(--color-white);
+}
+
+#xdget127652,
+#xdget235457 {
+  font-family: "Gilroy";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: var(--color-yellow);
+}
+
+.xdget-common-user-form h2 {
+  margin-bottom: 15px;
+}
+
+body .xdget-block .form-control {
+  background: none;
+  padding: 15px 20px;
+  height: auto;
+
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #656b6f;
+}
+
+#xdget571708 {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+#xdget118134,
+#xdget228977,
+#xdget947478 {
+  width: 220px;
+  height: 60px;
+
+  font-family: "Gilroy";
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #111315;
+
+  background: #fff43c;
+  border-radius: 4px;
+}
+
+#xdget421914,
+#xdget765333 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: var(--color-white);
+}
+
+#xdget856273 a {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+
+  color: var(--color-white);
+}
+
+#xdget856273 a:before {
+  content: "?";
+  display: block;
+  width: 18px;
+  height: 18px;
+  padding-top: 1px;
+
+  color: #191919;
+
+  background: var(--color-white);
+  border-radius: 50%;
+}
+
+#xdget475100 {
+  margin-top: 20px;
+  grid-column: 1/3;
+  display: flex;
+  justify-content: center;
+}
+
+#xdget981685 {
+  display: flex;
+  align-items: center;
+}
+
+body .xdget-root .checkbox-text {
+  font-family: "Gilroy";
+  color: var(--color-white);
+}
+
+#xdget533379 .html-content {
+  color: var(--color-white);
+}
+
+#xdget382565 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+@media screen and (max-width: 960px) {
+  .login-form-wrapper-bg {
+    display: none;
+  }
+
+  .login-form-wrapper {
+    grid-template-columns: 1fr;
+    width: 340px;
+    height: auto;
+  }
+
+  .xdget-loginUserForm.standard-form {
+    padding: 25px;
+    width: 340px;
+
+  }
+
+  #xdget387150 {
+  }
+
+  #xdget571708 {
+    display: block;
+  }
+
+  #xdget513946,
+  #xdget41784,
+  #xdget750892 {
+    font-family: "Gilroy";
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+
+    color: var(--color-white);
+  }
+
+  #xdget127652,
+  #xdget235457 {
+    font-family: "Gilroy";
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 17px;
+
+    color: var(--color-yellow);
+  }
+
+  body .xdget-block .form-control {
+    padding: 15px 17px;
+
+    font-size: 15px;
+    line-height: 17px;
+  }
+
+  #xdget118134,
+  #xdget228977,
+  #xdget947478 {
+    font-size: 18px;
+    line-height: 22px;
+
+    width: 100%;
+    height: 50px;
+  }
+
+  #xdget421914,
+  #xdget765333 {
+    width: 100%;
+  
+    font-size: 15px;
+    line-height: 17px;
+  }
+
+  #xdget475100 {
+    /* float: none; */
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center;
+  }
+
+  #xdget981685 {
+    display: block;
+  }
+
+  #xdget156550 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .global-confirm-checkbox-block {
+    padding-bottom: 0;
+  }
+}
