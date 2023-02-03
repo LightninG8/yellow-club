@@ -43,6 +43,11 @@
   color: var(--color-white);
 }
 
+.xdget-root .state-form .html-content {
+  color: var(--color-white);
+}
+
+
 .register-form button,
 .xdget-root .state-form > span {
   font-family: "Gilroy";
@@ -83,6 +88,7 @@ body .xdget-block .form-control {
   grid-gap: 10px;
 }
 
+.xdget-block.xdget-button.btn.btn-primary.btn-enter,
 .xdget-block.xdget-button.btn.btn-success {
   width: 220px;
   height: 60px;
@@ -97,7 +103,7 @@ body .xdget-block .form-control {
   background: #fff43c;
   border-radius: 4px;
 }
-
+.xdget-block.xdget-button.btn.btn-link.pull-right.btn-logout,
 .xdget-block.xdget-button.btn.btn-link.btn-remind {
   font-family: "Gilroy";
   font-style: normal;
@@ -159,7 +165,7 @@ body .xdget-root .checkbox-text {
   color: var(--color-white);
   padding-bottom: 0;
 }
-
+.xdget-block.xdget-div.form-buttons.xdget-common-container,
 .xdget-block.xdget-row.form-buttons.xdget-common-container {
   display: flex;
   align-items: center;
