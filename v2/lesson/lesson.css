@@ -1,0 +1,86 @@
+.gc-main-content {
+  --color-muted: #758695;
+  
+  font-family: 'Gilroy';
+  color: var(--color-white);
+  
+  background: var(--color-black);
+}
+
+.gc-main-content #answers,
+.gc-main-content h3,
+.gc-main-content b,
+.gc-main-content p {
+  font-family: 'Gilroy';
+  
+  color: var(--color-white);
+}
+
+.gc-main-content a span,
+.gc-main-content a {
+  font-family: 'Gilroy';
+  
+  color: var(--color-yellow) !important;
+}
+
+.gc-main-content .lesson-header-block.row-section {
+  background: var(--color-gray) !important;
+  border-color: var(--color-light-gray) !important;
+}
+
+.gc-main-content .page-header {
+  border-color: var(--color-light-gray) !important;
+
+}
+
+.gc-main-content .standard-page-content .breadcrumb > li + li:before {
+  color: var(--color-light-gray);
+}
+
+.gc-main-content .answer-form {
+  background: none;
+}
+
+.gc-main-content .lesson-answer-comment {
+  background: none;
+  color: var(--color-white);
+}
+
+.gc-main-content  .user-answer,
+.gc-main-content  .pseudo-link,
+.gc-main-content  .text-muted,
+.gc-main-content  .comment-time,
+.gc-main-content  .button,
+.gc-main-content  .like_users_list,
+.gc-main-content  .icon {
+  color: var(--color-muted) !important;
+  border-color: var(--color-muted) !important;
+}
+
+.gc-main-content label,
+.gc-main-content .answer-date a,
+.gc-main-content .btn-link {
+  color: var(--color-muted) !important;
+}
+
+.gc-main-content #showMoreAnswers,
+.gc-main-content .btn-send-answer:hover,
+.gc-main-content .btn-send-answer {
+  color: var(--color-black);
+  background: var(--color-yellow);
+}
+.gc-main-content .user-answer,
+.gc-main-content .simple-answer,
+.gc-main-content .lesson-mission-wrapper,
+.gc-main-content .lesson-mission-text,
+.gc-main-content .answer-form {
+  border-color: var(--color-light-gray) !important;
+}
+.gc-main-content .simple-answer,
+.gc-main-content .user-answer .addfield {
+  background: var(--color-gray) !important;
+}
+
+
+
+
