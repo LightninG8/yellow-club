@@ -691,6 +691,10 @@ body:not(.full-menu) .item__notify {
 
 /* Адаптив */
 @media screen and (max-width: 768px) {
+  .gc-main-content.with-left-menu {
+    margin-bottom: 0;
+  }
+
   body iframe.fake,
   body .talks-widget-window,
   #kanban .content,

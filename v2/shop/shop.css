@@ -8,6 +8,9 @@
 
   font-family: 'Gilroy';
 
+  background: var(--color-black);
+
+
 }
 
 .page__banner {
@@ -23,7 +26,11 @@
 .page__body {
   padding: 60px 40px;
 
-  background: var(--color-black);
+  background-image: url('https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/187/h/9005cbd82386faa037a4170ebbc57e58.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center bottom;
+
 }
 
 
@@ -119,11 +126,10 @@
 
 .shop__item {
   padding: 25px;
-  display: grid;
-  grid-template-rows: auto auto;
-  justify-content: center;
-  justify-items: center;
-  grid-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
 
   background: var(--color-gray);
   border: 1px solid var(--color-light-gray);
@@ -228,6 +234,15 @@
 
     font-size: 18px;
     line-height: 20px;
+  }
+
+  .lt-basket {
+    top: 62px;
+  }
+
+  .lt-basket.basket-collapsed {
+    top: 72px;
+    right: 10px;
   }
 }
 
