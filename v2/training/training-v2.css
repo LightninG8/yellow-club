@@ -66,34 +66,42 @@ body .stream-table tbody {
 
 /* Картинки карточек */
 /* Картинки карточек */
+.stream-table tr[data-training-id="700891108"] td a,
 .stream-table tr[data-training-id="699760892"] td a {
   background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/140/h/504c3626cd70ef2d8f878b6b44b2020c.png");
 }
 
+.stream-table tr[data-training-id="700891110"] td a,
 .stream-table tr[data-training-id="699763764"] td a {
   background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/290/h/84c4e6e054cd1add5ad5164d92d84d4d.png");
 }
 
+.stream-table tr[data-training-id="700891115"] td a,
 .stream-table tr[data-training-id="699765992"] td a {
   background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/263/h/d19c9c9f69aa2ef95e2c6e359356c24b.png");
 }
 
+.stream-table tr[data-training-id="700891117"] td a,
 .stream-table tr[data-training-id="699768331"] td a {
   background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/393/h/7abcb5fe859c28a3cf2f7b7373aa1d8f.png");
 }
 
+.stream-table tr[data-training-id="700891143"] td a,
 .stream-table tr[data-training-id="699769799"] td a {
   background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/192/h/9335346cd709d5a84a0a6f0a5d838dab.png");
 }
 
+.stream-table tr[data-training-id="700891144"] td a,
 .stream-table tr[data-training-id="699778208"] td a {
   background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/185/h/05d81ab18f343a316f6477c2cbf850ad.png");
 }
 
+.stream-table tr[data-training-id="700891145"] td a,
 .stream-table tr[data-training-id="699781704"] td a {
   background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/188/h/680e3b1b316373893902ec4aaebf5c3e.png");
 }
 
+.stream-table tr[data-training-id="700891146"] td a,
 .stream-table tr[data-training-id="699784170"] td a {
   background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/104/h/5091ec35b85c025587b4ef66d049f21e.png");
 }

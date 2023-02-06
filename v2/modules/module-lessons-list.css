@@ -1,3 +1,8 @@
+.xdget-lessonList form {
+  color: var(--color-white);
+}
+
+
 /* Уроки */
 .lesson-list {
   padding: 0;
@@ -12,6 +17,8 @@ ul.lesson-list li {
   margin-top: 20px;
   overflow: visible;
 }
+
+
 
 .lesson-list li a.user-state-bg {
   display: block;
