@@ -18,18 +18,29 @@
   color: var(--color-white);
 }
 
+
+.module-navigation {
+  display: flex;
+  gap: 20px;
+}
+
 .module-header-back-to span,
-.module-header-back-to svg path {
+.module-header-back-to svg path,
+.module-button span,
+.module-button svg path {
   transition: var(--transition-default);
 }
 
 .module-header-back-to:hover span,
-.module-header-back-to:hover svg path {
+.module-header-back-to:hover svg path,
+.module-button:hover span,
+.module-button:hover svg path {
   color: var(--color-yellow);
   fill: var(--color-yellow);
 }
 
-.module-header-back-to {
+.module-header-back-to,
+.module-button {
   font-family: "Gilroy";
   font-style: normal;
   font-weight: 600;
@@ -45,6 +56,15 @@
 .module-header-back-to span {
   margin-top: 2px;
   margin-left: 5px;
+}
+
+.module-next-lesson span {
+  margin-top: 2px;
+  margin-right: 5px;
+}
+
+.module-next-lesson svg {
+  transform: rotate(180deg);
 }
 
 .xdget-block.xdget-div.xdget-common-container.div {

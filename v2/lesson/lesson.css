@@ -1,10 +1,27 @@
+@import url('https://monstersreels.online/pl/layout/21687/10/module-banner.css');
+@import url('https://monstersreels.online/pl/layout/21687/5/module-header.css');
+
 .gc-main-content {
   --color-muted: #758695;
+  --color-default-text: #9FACB9;
   
   font-family: 'Gilroy';
   color: var(--color-white);
   
   background: var(--color-black);
+}
+
+.page-header,
+.standard-logo,
+.breadcrumb,
+.lesson-header-block {
+  display: none;
+}
+
+.gc-main-content > .container {
+  padding: 60px 40px;
+  margin: 0 !important;
+  width: 100%
 }
 
 .gc-main-content #answers,
@@ -13,7 +30,7 @@
 .gc-main-content p {
   font-family: 'Gilroy';
   
-  color: var(--color-white);
+  color: var(--color-default-text);
 }
 
 .gc-main-content a span,
@@ -84,3 +101,8 @@
 
 
 
+@media screen and (max-width: 768px) {
+  .gc-main-content > .container {
+    padding: 30px 20px;
+  }
+}

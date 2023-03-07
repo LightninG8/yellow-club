@@ -45,11 +45,6 @@ $(()=>{setTimeout(()=>{
         </header>
         <div class="leftbar__body">
           <ul class="gc-account-user-menu">
-            <li class="menu__item menu__logo">
-              <svg width="48" height="36" viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M48 36H39.8076V11.1951L28.1512 36H19.8488L8.19244 11.0854V36H0V0H11.3814L24.0275 26.7256L36.6186 0H48V36Z" fill="#EBFF00"/>
-              </svg>
-            </li>
           </ul>
           <div class="leftbar__rollup rollup">
             <div class="rollup__icon">

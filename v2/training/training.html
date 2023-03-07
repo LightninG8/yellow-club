@@ -47,19 +47,19 @@
 
 <script>
   setTimeout(() => {
-    const clubExperience = +$('#experience').text();
+    const clubExperience = +$('#experience').text() || 0;
     const progressLine = document.querySelector('#progress');
     const progressLineLength = progressLine.getTotalLength()
     const progressBar = $(progressLine);
     const progressLevel = $('#level');
 
 
-    const levelsScore = [0, 149, 399, 849, 1299, 1799, 2299, 2899, 2499, 4199, 5199, 6699, 1000000000000000000000000000000];
+    let levelsScore = [0, 149, 399, 849, 1299, 1799, 2299, 2899, 2499, 4199, 5199, 6699, 1000000000000000000000000000000];
 
     // Высчитываем уровень
     levelsScore.push(clubExperience);
 
-    levelsScore.sort((a, b) => a > b);
+    levelsScore = levelsScore.sort((a, b) => a - b);
     
     const clubLevel = levelsScore.indexOf(clubExperience);
 
