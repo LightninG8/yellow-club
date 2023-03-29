@@ -1,14 +1,33 @@
 (() => {
+  if (
+    checkTruePage({
+      notMode: 0,
+      strict: 0,
+      pages: ["/teach/control"],
+    })
+  ) {
+    // Хлебные крошки
+    CSSinjection("/pl/layout/21687/16/module-breadcrumbs.css.css");
+    JSinjection("/pl/layout/21687/15/module-breadcrumbs.js.js");
+  }
+
+  // Статусы заданий и уроков
+  $('.breadcrumbs').ready(() => {
+    if($('a[href="/teach/control/stream/view/id/697759636"]').length) {
+      CSSinjection("/pl/layout/21687/17/module-lessons-status.css");
+      JSinjection("/pl/layout/21687/18/module-lessons-status.js");
+    }
+  })
+
+
   const isWebinar = location.href.split("/").includes("webinar");
 
-  if (isWebinar) {
-    CSSinjection("/pl/layout/21687/3/webinar-room.css");
-  }
 
   // Для админов и для вебинарной комнаты - отключаем
   if (window.userInfo.isAdmin || isWebinar) {
     return;
   }
+
 
   // Боковое меню
   try {
@@ -16,6 +35,18 @@
     CSSinjection("/pl/layout/21687/1/left-menu-css.css");
   } catch (e) {
     console.log(e);
+  }
+
+  // Вебинарная комната
+  if (
+    checkTruePage({
+      notMode: 0,
+      strict: 0,
+      pages: ["/pl/webinar/"],
+    })
+  ) {
+    CSSnjection("/pl/layout/21687/3/webinar-room.css");
+
   }
 
   // Страница урока
@@ -28,7 +59,11 @@
   ) {
     CSSinjection("/pl/layout/21687/9/module-widget.css");
     CSSinjection("/pl/layout/21687/13/lesson.css");
+    JSinjection("/pl/layout/21687/14/lesson.js");
   }
+
+
+  
 })();
 
 function JSinjection(fileName, callback) {

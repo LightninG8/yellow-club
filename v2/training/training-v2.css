@@ -106,6 +106,18 @@ body .stream-table tbody {
   background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/104/h/5091ec35b85c025587b4ef66d049f21e.png");
 }
 
+.stream-table tr[data-training-id="716345080"] td a,
+.stream-table tr[data-training-id="716444269"] td a {
+  background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/160/h/2485e1268f9f89733ec0a08c422beee7.png");
+}
+
+.stream-table tr[data-training-id="724917190"] td a,
+.stream-table tr[data-training-id="723616608"] td a {
+  background-image: url("https://fs.getcourse.ru/fileservice/file/download/a/512999/sc/80/h/c872100848d97e748f9506e409fae8b9.png");
+}
+
+
+
 /* Шапка */
 .header-image img {
   max-width: 100%;
@@ -190,6 +202,19 @@ body .stream-table tbody {
  text-transform: uppercase;
  
  color: var(--color-white);
+}
+
+.button-help {
+  grid-column: 1/3;
+  justify-content: center;
+
+  background: var(--color-yellow);
+  height: 40px;
+  border: none;
+  
+}
+.button-help .button-text {
+  color: var(--color-black);  
 }
 
 .button .button-icon path {

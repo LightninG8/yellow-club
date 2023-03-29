@@ -179,6 +179,9 @@ ul.lesson-list li {
   transition: var(--transition-default);
 }
 
+.lesson-list li a:hover,
+.lesson-list li a:active,
+.lesson-list li a:focus,
 .lesson-list li a:visited {
   text-decoration: none;
 }

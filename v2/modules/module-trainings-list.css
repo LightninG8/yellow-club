@@ -1,0 +1,94 @@
+.xdget-trainingList {
+  padding: 0;
+  margin: 0;
+
+  background: none;
+}
+.xdget-trainingList .stream-table {
+  padding: 0;
+  margin: 20px 0;
+}
+
+.stream-table tbody {
+  display: grid;
+  grid-gap: 20px;
+}
+
+
+.xdget-trainingList tbody tr {
+  display: block;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+
+  font-family: "Gilroy";
+
+  border: 1px solid var(--color-extra-gray);
+  border-radius: 10px;
+  background: var(--color-gray);
+
+  transition: var(--transition-default);
+}
+
+
+.xdget-trainingList tbody tr:hover {
+  border: 1px solid var(--color-yellow);
+  box-shadow: 0 0 13px 1px var(--color-yellow);
+}
+
+.xdget-trainingList tbody tr td {
+  padding: 0;
+  margin: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.xdget-trainingList a {
+  display: block;
+  height: 100%;
+
+  padding: 20px;
+}
+
+body .stream-table tr td:hover {
+  background: none;
+}
+
+
+
+.stream-table .stream-title {
+  display: grid;
+  align-items: center;
+
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+
+  color: var(--color-white);
+}
+
+.stream-table .stream-title + div {
+  margin-top: 5px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: var(--color-light-gray);
+}
+
+
+
+  
+@media screen and (max-width: 768px) {
+  .stream-table .stream-title  {
+    font-size: 18px;
+    line-height: 21px;
+    
+  }
+  
+  .stream-table .stream-title + div {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}

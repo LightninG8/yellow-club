@@ -1,15 +1,14 @@
-// Заголовок модуля
-$('.module-title').html($('.page-header h1').html().split(' ').map((el) => `<span>${el}</span>`).join('\n'));
-
-
 
 // Статус задания
 $('.lesson-list li').each((i, el) => {
+  const classList = ['user-state-has_mission', 'user-state-answered', 'user-state-accomplished'];
 
   const info = $(el).find('.vmiddle div:not(.title):not(.description)');
   const date = $(el).find('.lesson-date').text().replace('Дата и время начала ', '');
 
-  if (info.length == 0 && !el.classList.contains('user-state-answered')) {
+  console.log(el);
+
+  if (!$(el).hasClass(classList[0]) && !$(el).hasClass(classList[1]) && !$(el).hasClass(classList[2]) && !date) {
     return;
   }
 
@@ -24,7 +23,7 @@ $('.lesson-list li').each((i, el) => {
     <path fill-rule="evenodd" clip-rule="evenodd" d="M5 0C5.55228 0 6 0.447715 6 1V2H14V1C14 0.447715 14.4477 0 15 0C15.5523 0 16 0.447715 16 1V2H17C18.6569 2 20 3.34315 20 5V17C20 18.6569 18.6569 20 17 20H3C1.34315 20 0 18.6569 0 17V5C0 3.34315 1.34315 2 3 2H4V1C4 0.447715 4.44772 0 5 0ZM14 4V5C14 5.55228 14.4477 6 15 6C15.5523 6 16 5.55228 16 5V4H17C17.5523 4 18 4.44771 18 5V8H2V5C2 4.44772 2.44772 4 3 4H4V5C4 5.55228 4.44772 6 5 6C5.55228 6 6 5.55228 6 5V4H14ZM2 10V17C2 17.5523 2.44772 18 3 18H17C17.5523 18 18 17.5523 18 17V10H2Z" fill="#6F767E"/>
   </svg>
   <span>
-    ${date || 'Без дедлайна'}
+    ${date || 'Доступно'}
   </span> 
   </div>
   `);

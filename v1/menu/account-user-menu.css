@@ -384,7 +384,8 @@ body:not(.full-menu) .item__notify {
 
 
 .submenu__link:visited,
-.submenu__link:hover {
+.submenu__link:hover,
+.submenu__link:focus {
   color: var(--color-light-gray);
   text-decoration: none;
 }

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+$( document ).ready( () => {
   $('.gc-main-content').prepend(`
     <div class="module-background">
       <div class="module-name">Урок</div>

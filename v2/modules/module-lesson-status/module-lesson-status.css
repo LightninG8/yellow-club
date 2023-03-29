@@ -1,0 +1,91 @@
+
+.lesson-footer {
+  margin-top: 20px;
+  padding-top: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid var(--color-extra-gray);
+}
+
+.lesson-starts {
+  display: flex;
+  align-items: center;
+}
+
+.lesson-starts.empty {
+  visibility: hidden;
+}
+.lesson-starts span {
+  margin-left: 10px;
+
+  font-weight: 600;
+  font-size: 14px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+
+  color: var(--color-light-gray);
+}
+
+
+.task-status-answered,
+.task-status-reached,
+.task-status-has {
+  display: none;
+  align-items: center;
+  margin-left: 20px;
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  white-space: nowrap;
+
+  /* yellow */
+
+  color: #EBFF00;
+}
+
+.task-status-answered span,
+.task-status-reached span,
+.task-status-has span {
+  white-space: nowrap;
+  margin-left: 5px;
+  padding-top: 2px;
+}
+
+.task-status-reached {
+  color: var(--color-yellow);
+}
+.task-status-answered,
+.task-status-has{
+  color: var(--color-light-gray);
+}
+
+.user-state-answered .task-status-answered,
+.user-state-accomplished .task-status-reached,
+.user-state-has_mission .task-status-has {
+  display: flex;
+}
+
+
+.lesson-list li.user-state-not_reached .info {
+  background: none;
+}
+
+.lesson-list li.user-state-not_reached {
+  cursor: pointer;
+}
+
+
+
+.lesson-list_watched .lesson-list__video-watched {
+  display: inline-block;
+}
+
+.lesson-list__video-watched {
+  line-height: 24px;
+  background-color: var(--color-light-gray);
+}

@@ -1,0 +1,12 @@
+.gc-main-content .container .breadcrumb,
+.breadcrumbs {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.gc-main-content .breadcrumb a,
+.gc-main-content .breadcrumbs a {
+  font-family: 'Gilroy';
+  color: var(--color-light-gray) !important;
+}
+
